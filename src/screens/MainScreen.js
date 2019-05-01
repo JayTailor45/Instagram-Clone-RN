@@ -13,17 +13,7 @@ import ProfileTab from "./ProfileTab"
 export default class MainScreen extends Component{
 
   static navigationOptions = {
-    headerLeft:
-        <Icon
-            name={"camera"}
-            style={{padding:12}}
-        />,
-    title: "Instagram",
-    headerRight:
-        <Icon
-            name={"send"}
-            style={{padding:12}}
-        />
+    header: null
   };
 
   render() {

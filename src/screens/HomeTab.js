@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
-import {Icon, Container, Content, Thumbnail} from "native-base";
+import {Icon, Container, Content, Thumbnail, Header, Left, Right, Body} from "native-base";
 import CardComponent from '../components/CardComponent'
 
 export default class HomeTab extends Component {
@@ -14,6 +14,21 @@ export default class HomeTab extends Component {
   render() {
     return (
         <Container style={style.container}>
+          <Header>
+            <Left>
+              <Icon
+                  name={"camera"}
+                  style={{padding:10}}
+              />
+            </Left>
+            <Body><Text>Instagram</Text></Body>
+            <Right>
+              <Icon
+                  name={"send"}
+                  style={{padding:10}}
+              />
+            </Right>
+          </Header>
           <Content>
             <View style={style.header}>
               <View style={style.story_header}>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import {Icon} from "native-base";
+import { View, Text, StyleSheet } from 'react-native';
+import {Icon, Container, Content} from "native-base";
+import CardComponent from '../components/CardComponent'
 
 export default class HomeTab extends Component {
 
@@ -12,9 +13,21 @@ export default class HomeTab extends Component {
 
   render() {
     return (
-        <View>
-          <Text>HomeTab</Text>
-        </View>
+      <Container style={style.container}>
+        <Content>
+          <CardComponent like={'30'}/>
+          <CardComponent like={'10'}/>
+          <CardComponent like={'32'}/>
+
+        </Content>
+      </Container>
     )
   }
 }
+
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white'
+  }
+});

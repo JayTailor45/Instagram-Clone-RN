@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {SafeAreaView, View, Text} from 'react-native'
+import {SafeAreaView, View, Text, Platform} from 'react-native'
 import {Icon} from "native-base";
 
 import {createBottomTabNavigator, createAppContainer} from "react-navigation";
@@ -39,6 +39,23 @@ const AppTabNavigator = createBottomTabNavigator({
   AddMediaTab,
   LikesTab,
   ProfileTab
+},{
+  swipeEnabled: true,
+  animationEnabled: true,
+  tabBarPosition: "bottom",
+  tabBarOptions: {
+    style:{
+      ...Platform.select({
+        android: {
+          backgroundColor: 'white'
+        }
+      })
+    },
+    activeTintColor: "#000",
+    inactiveTintColor: "#333",
+    showLabel: false,
+    showIcon: true
+  }
 });
 
 const TabContainer = createAppContainer(AppTabNavigator)

@@ -42,7 +42,7 @@ const AppTabNavigator = createBottomTabNavigator({
       })
     },
     activeTintColor: "#000",
-    inactiveTintColor: "#333",
+    inactiveTintColor: "#797979",
     showLabel: false,
     showIcon: true
   }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, Dimensions} from 'react-native';
+import {View, Text, Image, Dimensions, StyleSheet, Platform} from 'react-native';
 import {Icon, Header, Left, Body, Right, Container, Content, Button} from "native-base";
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 import CardComponent from "../components/CardComponent";
@@ -78,14 +78,14 @@ export default class ProfileTab extends Component {
   render() {
     return (
         <Container style={{flex: 1, backgroundColor: 'white'}}>
-          <Header>
+          <Header style={[style.androidHeader]}>
             <Left>
               <Icon
                   name={"md-person-add"}
                   style={{padding: 10}}
               />
             </Left>
-            <Body><Text>USERNAME</Text></Body>
+            <Body style={[style.androidHeaderTitle]}><Text>USERNAME</Text></Body>
             <Right>
               <EntypoIcon
                   name={"back-in-time"}
@@ -190,3 +190,20 @@ export default class ProfileTab extends Component {
     )
   }
 }
+
+const style = StyleSheet.create({
+  androidHeader: {
+    ...Platform.select({
+      android: {
+        backgroundColor: 'white'
+      }
+    })
+  },
+  androidHeaderTitle: {
+    ...Platform.select({
+      android: {
+        alignItems: 'flex-end'
+      }
+    })
+  }
+});

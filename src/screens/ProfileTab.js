@@ -1,10 +1,22 @@
 import React, {Component} from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Dimensions} from 'react-native';
 import {Icon, Header, Left, Body, Right, Container, Content, Button} from "native-base";
 import EntypoIcon from 'react-native-vector-icons/Entypo'
-import FA from 'react-native-vector-icons/FontAwesome'
 
 export default class ProfileTab extends Component {
+
+  images = [
+    require('../assets/images/default_user.png'),
+    require('../assets/images/default_user.png'),
+    require('../assets/images/default_user.png'),
+    require('../assets/images/default_user.png'),
+    require('../assets/images/default_user.png'),
+    require('../assets/images/default_user.png'),
+    require('../assets/images/default_user.png')
+  ];
+
+  height = Dimensions.get('window').height
+  width = Dimensions.get('window').width
 
   static navigationOptions = {
     tabBarIcon: ({tintColor}) => (
@@ -23,6 +35,35 @@ export default class ProfileTab extends Component {
     this.setState({
       activeViewIndex: index
     })
+  }
+
+  renderSectionOne() {
+    return this.images.map((image,index) => {
+      return(
+          <View key={index} style={[{
+            width: (this.width)/3,
+            height: (this.height)/6},
+            { marginBottom: 2 },
+            index % 3 !== 0 ? {paddingLeft: 2} : {paddingLeft: 0}
+          ]}>
+            <Image
+              style={{flex: 1, width: undefined, height: undefined}}
+              source={image}
+            />
+          </View>
+      )
+    })
+  }
+
+  renderSection() {
+    switch (this.state.activeViewIndex) {
+      case 0:
+        return (
+            <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+              {this.renderSectionOne()}
+            </View>
+        );
+    }
   }
 
   render() {
@@ -132,8 +173,8 @@ export default class ProfileTab extends Component {
                       style={[this.state.activeViewIndex === 3 ? {} : {color: 'grey'}]}
                   />
                 </Button>
-
               </View>
+              {this.renderSection()}
             </View>
           </Content>
         </Container>

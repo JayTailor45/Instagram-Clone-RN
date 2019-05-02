@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Platform, StatusBar} from 'react-native';
 import {Icon, Container, Content, Thumbnail, Header, Left, Right, Body} from "native-base";
 import CardComponent from '../components/CardComponent'
 
@@ -14,14 +14,14 @@ export default class HomeTab extends Component {
   render() {
     return (
         <Container style={style.container}>
-          <Header>
+          <Header style={[style.androidHeader]}>
             <Left>
               <Icon
                   name={"camera"}
                   style={{padding:10}}
               />
             </Left>
-            <Body><Text>Instagram</Text></Body>
+            <Body style={[style.androidHeaderTitle]}><Text>Instagram</Text></Body>
             <Right>
               <Icon
                   name={"send"}
@@ -116,5 +116,20 @@ const style = StyleSheet.create({
     marginHorizontal: 5,
     borderColor: 'pink',
     borderWidth: 3
+  },
+  androidHeader: {
+    ...Platform.select({
+      android: {
+        backgroundColor: 'white'
+      }
+    })
+  },
+  androidHeaderTitle: {
+    ...Platform.select({
+      android: {
+        alignItems: 'flex-end'
+      }
+    })
+
   }
 });

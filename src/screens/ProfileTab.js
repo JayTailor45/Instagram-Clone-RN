@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, Image, Dimensions} from 'react-native';
 import {Icon, Header, Left, Body, Right, Container, Content, Button} from "native-base";
 import EntypoIcon from 'react-native-vector-icons/Entypo'
+import CardComponent from "../components/CardComponent";
 
 export default class ProfileTab extends Component {
 
@@ -61,6 +62,14 @@ export default class ProfileTab extends Component {
         return (
             <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
               {this.renderSectionOne()}
+            </View>
+        );
+      case 1:
+        return (
+            <View>
+              <CardComponent like={'500'}/>
+              <CardComponent like={'200'}/>
+              <CardComponent like={'50'}/>
             </View>
         );
     }

@@ -45,6 +45,14 @@ export default class CardComponent extends Component {
               />
             </Button>
           </Left>
+          <Right>
+            <Button transparent>
+              <Icon
+                  name='bookmark'
+                  style={{color:'black'}}
+              />
+            </Button>
+          </Right>
         </CardItem>
         <View style={{marginLeft: 15}}>
           <Text> {this.props.like} likes </Text>

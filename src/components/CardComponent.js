@@ -46,11 +46,11 @@ export default class CardComponent extends Component {
             </Button>
           </Left>
         </CardItem>
-        <CardItem>
+        <View style={{marginLeft: 15}}>
           <Text> {this.props.like} likes </Text>
-        </CardItem>
+        </View>
         <CardItem>
-          <Text>
+          <Text numberOfLines={3} ellipsizeMode={'tail'}>
             <Text style={{fontWeight: "900"}}> username </Text>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequuntur delectus dignissimos dolor dolorum explicabo facere minima molestiae nam natus, nemo nulla odit porro quae quibusdam quo sapiente sit sunt?
           </Text>

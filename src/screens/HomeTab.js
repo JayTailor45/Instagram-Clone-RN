@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView, Platform, StatusBar} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Platform, StatusBar, Image} from 'react-native';
 import {Icon, Container, Content, Thumbnail, Header, Left, Right, Body} from "native-base";
 import CardComponent from '../components/CardComponent'
 
@@ -21,7 +21,12 @@ export default class HomeTab extends Component {
                   style={{padding:10}}
               />
             </Left>
-            <Body style={[style.androidHeaderTitle]}><Text>Instagram</Text></Body>
+            <Body style={[style.androidHeaderTitle]}>
+              <Image
+                  style={{}}
+                  source={require('../assets/images/instagram_logo.png')}
+              />
+            </Body>
             <Right>
               <Icon
                   name={"send"}

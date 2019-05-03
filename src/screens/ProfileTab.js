@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, Image, Dimensions, StyleSheet, Platform} from 'react-native';
 import {Icon, Header, Left, Body, Right, Container, Content, Button} from "native-base";
-import EntypoIcon from 'react-native-vector-icons/Entypo'
+import EntypoIcon from 'react-native-vector-icons/Entypo';
 import CardComponent from "../components/CardComponent";
 
 export default class ProfileTab extends Component {
@@ -16,8 +16,8 @@ export default class ProfileTab extends Component {
     require('../assets/images/default_user.png')
   ];
 
-  height = Dimensions.get('window').height
-  width = Dimensions.get('window').width
+  height = Dimensions.get('window').height;
+  width = Dimensions.get('window').width;
 
   static navigationOptions = {
     tabBarIcon: ({tintColor}) => (
@@ -78,6 +78,9 @@ export default class ProfileTab extends Component {
   render() {
     return (
         <Container style={{flex: 1, backgroundColor: 'white'}}>
+
+          {/* Header bar*/}
+
           <Header style={[style.androidHeader]}>
             <Left>
               <Icon
@@ -93,8 +96,12 @@ export default class ProfileTab extends Component {
               />
             </Right>
           </Header>
+
           <Content>
             <View style={{paddingTop: 10}}>
+
+              {/* User profile review */}
+
               <View style={{flexDirection: 'row',}}>
                 <View style={{alignItems: 'center'}}>
                   <Image
@@ -128,6 +135,9 @@ export default class ProfileTab extends Component {
                   </View>
                 </View>
               </View>
+
+              {/* User Bio */}
+
               <View style={{paddingHorizontal: 10, paddingVertical: 10}}>
                 <Text style={{fontWeight: 'bold'}}>username</Text>
                 <Text>Bio...</Text>
@@ -172,16 +182,16 @@ export default class ProfileTab extends Component {
                       style={[this.state.activeViewIndex === 2 ? {} : {color: 'grey'}]}
                   />
                 </Button>
-                <Button
-                    transparent
-                    onPress={() => this.segmentClicked(3)}
-                    active={this.state.activeViewIndex === 3}
-                >
-                  <Icon
-                      name="bookmark"
-                      style={[this.state.activeViewIndex === 3 ? {} : {color: 'grey'}]}
-                  />
-                </Button>
+                {/*<Button*/}
+                    {/*transparent*/}
+                    {/*onPress={() => this.segmentClicked(3)}*/}
+                    {/*active={this.state.activeViewIndex === 3}*/}
+                {/*>*/}
+                  {/*<Icon*/}
+                      {/*name="bookmark"*/}
+                      {/*style={[this.state.activeViewIndex === 3 ? {} : {color: 'grey'}]}*/}
+                  {/*/>*/}
+                {/*</Button>*/}
               </View>
               {this.renderSection()}
             </View>

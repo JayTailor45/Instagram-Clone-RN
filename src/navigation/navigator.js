@@ -13,16 +13,16 @@ import SplashScreen from "../screens/SplashScreen"
 const AuthStack = createStackNavigator({
   Login,
   Register
-},{headerMode: 'none'});
+}, {headerMode: 'none'});
 
 const AppStack = createStackNavigator({
   MainScreen
-},{headerMode: 'none'});
+}, {headerMode: 'none'});
 
 
 const Root = createSwitchNavigator({
-  // SplashScreen,
-  // AppStack,
+  SplashScreen,
+  AppStack,
   AuthStack
 });
 

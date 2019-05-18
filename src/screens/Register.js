@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Input, Item} from "native-base";
 
@@ -17,30 +17,31 @@ class Register extends Component {
               <Input
                   placeholder={'Email'}
                   placeholderTextColor={'#fff'}
-                  style={{ color: '#fff'}}/>
+                  style={{color: '#fff'}}/>
             </Item>
             <Item style={styles.inputContainer}>
               <Input
                   placeholder={'Full name'}
                   placeholderTextColor={'#fff'}
-                  style={{ color: '#fff'}}/>
+                  style={{color: '#fff'}}/>
             </Item>
             <Item style={styles.inputContainer}>
               <Input
                   placeholder={'Username'}
                   placeholderTextColor={'#fff'}
-                  style={{ color: '#fff'}}/>
+                  style={{color: '#fff'}}/>
             </Item>
             <Item style={styles.inputContainer}>
               <Input
                   secureTextEntry={true}
                   placeholder={'Password'}
                   placeholderTextColor={'#fff'}
-                  style={{ color: '#fff'}}/>
+                  style={{color: '#fff'}}/>
             </Item>
             <TouchableOpacity
-                style={{ width: '90%' }}
-                onPress={() => {}}
+                style={{width: '90%'}}
+                onPress={() => {
+                }}
             >
               <View style={styles.RegButtonContainer}>
                 <Text style={{color: '#fff'}}>Register</Text>
@@ -49,7 +50,9 @@ class Register extends Component {
           </View>
           <View style={styles.loginContainer}>
             <Text style={{color: '#fff'}}>Already have an account?</Text>
-            <TouchableOpacity onPress={() => {this.props.navigation.goBack(null)}}>
+            <TouchableOpacity onPress={() => {
+              this.props.navigation.goBack(null)
+            }}>
               <Text style={{marginStart: 16, fontWeight: '600', color: '#fff'}}>Sign In</Text>
             </TouchableOpacity>
           </View>

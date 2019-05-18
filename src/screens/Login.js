@@ -73,6 +73,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   signupContainer: {
+    borderWidth: 1,
+    borderTopColor: '#ffffff30',
     height: 80,
     width: '100%',
     bottom: 0,

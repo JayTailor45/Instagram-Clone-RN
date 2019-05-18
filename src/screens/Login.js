@@ -35,7 +35,7 @@ class Login extends Component {
           </View>
           <View style={styles.signupContainer}>
             <Text style={{color: '#fff'}}>Don't have an account?</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {this.props.navigation.navigate('Register')}}>
               <Text style={{marginStart: 16, fontWeight: '600', color: '#fff'}}>Sign Up</Text>
             </TouchableOpacity>
           </View>

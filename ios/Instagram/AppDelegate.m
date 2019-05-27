@@ -10,6 +10,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import "IQKeyboardManager.h"
 
 @implementation AppDelegate
 
@@ -27,6 +28,10 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  [[IQKeyboardManager sharedManager] setEnable:YES];
+  [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
+  
   return YES;
 }
 

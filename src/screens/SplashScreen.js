@@ -3,6 +3,13 @@ import {StyleSheet, ActivityIndicator, Image, ImageBackground} from 'react-nativ
 
 class SplashScreen extends Component {
 
+  constructor(){
+    super();
+    setTimeout(()=>{
+      this.props.navigation.navigate('AuthStack');
+    }, 3000)
+  }
+
   render() {
     return (
         <ImageBackground
